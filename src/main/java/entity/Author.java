@@ -15,6 +15,10 @@ public class Author {
         this.bookList = bookList;
     }
 
+    public Author() {
+
+    }
+
     public Integer getAuthorId() {
         return authorId;
     }
