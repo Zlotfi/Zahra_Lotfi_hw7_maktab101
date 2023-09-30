@@ -5,6 +5,7 @@ import entity.Author;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -25,5 +26,21 @@ public class AuthorRepository {
         preparedStatement.setString(4, Arrays.toString((String[]) author.getBookList()));
         int result = preparedStatement.executeUpdate();
         return result;
+    }
+
+    public Author load(int authorId) throws SQLException {
+        String sql = "SELECT * FROM author WHERE authorId=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,authorId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        Author author = new Author();
+        if (resultSet.next()){
+            author.setAuthorId(resultSet.getInt(1));
+            author.setFirstName(resultSet.getString(2));
+            author.setLastName(resultSet.getString(3));
+            author.setAge(resultSet.getInt(4));
+            author.setBookList(new String[]{resultSet.getString(5)});
+        }
+        return author;
     }
 }
