@@ -27,7 +27,10 @@ public class Main {
 //        System.out.println("Author book: " + book.getAuthorBook());
 //        Book books = new Book(1,"rahaei","1392","jamal mir sadeghi");
 //        bookRepository.delete(books);
-        AuthorService authorService = new AuthorService();
-        authorService.register();
+        // test register and addBook method
+//        AuthorService authorService = new AuthorService();
+//        authorService.register();
+        BookService bookService = new BookService();
+        bookService.addBook();
     }
 }
