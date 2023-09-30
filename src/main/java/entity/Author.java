@@ -5,7 +5,7 @@ public class Author {
     private String firstName;
     private String lastName;
     private int age;
-    private String[] bookList = new String[3];
+    private String[] bookList;
 
     public Author(Integer authorId, String firstName, String lastName, int age, String[] bookList) {
         this.authorId = authorId;
