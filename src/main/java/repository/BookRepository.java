@@ -42,4 +42,11 @@ public class BookRepository {
         }
         return book;
     }
+
+    public void delete(Book book) throws SQLException {
+        String query = "DELETE FROM book WHERE bookId = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1,book.getBookId());
+        int result = preparedStatement.executeUpdate();
+    }
 }
