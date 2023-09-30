@@ -12,7 +12,7 @@ public class AuthorService {
     public AuthorService() throws SQLException {
     }
 
-    public void register(String firstName,String lastName,int age) throws SQLException {
+    public void register() throws SQLException {
         Author author = new Author(null,"parvin","etesami",80, new String[]{"divan"});
         int result = authorRepository.save(author);
         if(result != 0)
