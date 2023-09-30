@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS author(
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     age INT NOT NULL,
-    bookList TEXT[] NOT NULL
+    bookList VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS book(
