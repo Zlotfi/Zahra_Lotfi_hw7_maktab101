@@ -7,5 +7,8 @@ CREATE TABLE IF NOT EXISTS author(
 );
 
 CREATE TABLE IF NOT EXISTS book(
-
-)
+    bookId SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    printYear VARCHAR(50) NOT NULL,
+    authorBook VARCHAR(50) NOT NULL
+);
