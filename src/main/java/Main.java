@@ -17,11 +17,13 @@ public class Main {
 //        System.out.println(author.getAge());
 //        System.out.println(Arrays.toString(author.getBookList()));
         BookRepository bookRepository = new BookRepository();
-//        Book book = new Book(null,"rahaei","1392","jamal mir sadeghi");
-//        bookRepository.save(book);
-        Book book = bookRepository.load(1);
-        System.out.println("book title: " + book.getTitle());
-        System.out.println("printYear book: " + book.getPrintYear());
-        System.out.println("Author book: " + book.getAuthorBook());
+        Book book = new Book(null,"rahaei","1392","jamal mir sadeghi");
+        bookRepository.save(book);
+//        Book book = bookRepository.load(1);
+//        System.out.println("book title: " + book.getTitle());
+//        System.out.println("printYear book: " + book.getPrintYear());
+//        System.out.println("Author book: " + book.getAuthorBook());
+//        Book books = new Book(1,"rahaei","1392","jamal mir sadeghi");
+//        bookRepository.delete(books);
     }
 }
