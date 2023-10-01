@@ -25,8 +25,9 @@ public class Author {
         return id;
     }
 
-    public void setId(Integer id) {
+    public int setId(Integer id) {
         this.id = id;
+        return 0;
     }
 
     public String getFirstName() {
