@@ -8,6 +8,7 @@ import service.AuthorService;
 import service.BookService;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu {
@@ -48,8 +49,10 @@ public class Menu {
                             authorService.register();
                         }
                         case 2 -> {
+                            System.out.println("id:");
                             assert author != null;
-                            authorRepository.load(author.getId());
+                            Author[] authors = new Author[]{authorRepository.load(scanner.nextInt())};
+                            System.out.println(Arrays.toString(authors));
                         }
                         case 3 -> isTrue = false;
                         default -> System.out.println("error");
@@ -69,12 +72,16 @@ public class Menu {
                             bookService.addBook();
                         }
                         case 2 -> {
+                            System.out.println("id:");
                             assert book != null;
-                            bookRepository.load(book.getId());
+                            Book[] books = new Book[]{bookRepository.load(scanner.nextInt())};
+                            System.out.println(Arrays.toString(books));
                         }
                         case 3 -> {
+                            System.out.println("id:");
                             assert book != null;
-                            bookRepository.delete(book.getId());
+                            bookRepository.delete(scanner.nextInt());
+                            System.out.println("successfully deleted");
                         }
                         case 4 -> isTrue = false;
                         default -> System.out.println("error");
