@@ -4,14 +4,14 @@ public class Book {
 
     private Integer bookId;
     private String title;
-    private String printYear;
-    private String authorBook;
+    private String printyear;
+    private String authorbook;
 
-    public Book(Integer bookId, String title, String printYear, String authorBook) {
+    public Book(Integer bookId, String title, String printyear, String authorbook) {
         this.bookId = bookId;
         this.title = title;
-        this.printYear = printYear;
-        this.authorBook = authorBook;
+        this.printyear = printyear;
+        this.authorbook = authorbook;
     }
 
     public Book() {
@@ -35,19 +35,19 @@ public class Book {
     }
 
     public String getPrintYear() {
-        return printYear;
+        return printyear;
     }
 
-    public void setPrintYear(String printYear) {
-        this.printYear = printYear;
+    public void setPrintYear(String printyear) {
+        this.printyear = printyear;
     }
 
     public String getAuthorBook() {
-        return authorBook;
+        return authorbook;
     }
 
-    public void setAuthorBook(String authorBook) {
-        this.authorBook = authorBook;
+    public void setAuthorBook(String authorbook) {
+        this.authorbook = authorbook;
     }
 
     @Override
@@ -55,8 +55,8 @@ public class Book {
         return "Book{" +
                 "bookId=" + bookId +
                 ", title='" + title + '\'' +
-                ", printYear='" + printYear + '\'' +
-                ", authorBook='" + authorBook + '\'' +
+                ", printYear='" + printyear + '\'' +
+                ", authorBook='" + authorbook + '\'' +
                 '}';
     }
 }
