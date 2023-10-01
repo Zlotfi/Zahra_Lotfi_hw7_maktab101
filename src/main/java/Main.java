@@ -1,5 +1,6 @@
 import entity.Author;
 import entity.Book;
+import menu.Menu;
 import repository.AuthorRepository;
 import repository.BookRepository;
 import service.AuthorService;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws SQLException {
 //        AuthorRepository authorRepository = new AuthorRepository();
+//        BookRepository bookRepository = new BookRepository();
 //        Author author = new Author(null,"jamal","mir sadeghi",90, new String[]{"rahaei"});
 //        authorRepository.save(author);
 //        Author author = authorRepository.load(1);
@@ -30,7 +32,19 @@ public class Main {
         // test register and addBook method
 //        AuthorService authorService = new AuthorService();
 //        authorService.register();
-        BookService bookService = new BookService();
-        bookService.addBook();
+//        BookService bookService = new BookService();
+//        bookService.addBook();
+//        authorRepository.load(1);
+        //test load method----------------------------
+//        Author[] authors = new Author[]{authorRepository.load(1)};
+//        System.out.println(Arrays.toString(authors));
+//        Book[] books = new Book[]{bookRepository.load(2)};
+//        System.out.println(Arrays.toString(books));
+        Menu menu = new Menu();
+        menu.publicMenu();
+
+
+
+
     }
 }
