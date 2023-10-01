@@ -24,7 +24,7 @@ public class BookService {
 //            System.out.println("OOps! :(");
 //    }
 
-    public void addBook(int id) throws SQLException {
+    public void addBook() throws SQLException {
         System.out.println("Please enter your title:");
         String title = scanner.nextLine();
 
