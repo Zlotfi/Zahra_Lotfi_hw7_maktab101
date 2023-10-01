@@ -18,12 +18,12 @@ public class BookRepository {
     public BookRepository() throws SQLException {
     }
 
-    public int save(Book book) throws SQLException {
-        String add = "INSERT INTO book(title,printYear,authorBook)VALUES(?,?,?)";
+    public int save(String title,String printyear,String authorbook) throws SQLException {
+        String add = "INSERT INTO book(title,printyear,authorbook)VALUES(?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(add);
-        preparedStatement.setString(1, book.getTitle());
-        preparedStatement.setString(2, book.getPrintYear());
-        preparedStatement.setString(3, book.getAuthorBook());
+        preparedStatement.setString(1, title);
+        preparedStatement.setString(2, printyear);
+        preparedStatement.setString(3, authorbook);
         int result = preparedStatement.executeUpdate();
         return result;
     }
