@@ -31,7 +31,7 @@ public class AuthorService {
 //            System.out.println("OOps! :(");
 //    }
 
-    public void register(int id) throws SQLException {
+    public void register() throws SQLException {
         System.out.println("Please enter your firstName:");
         String firstName = scanner.nextLine();
 
@@ -41,7 +41,7 @@ public class AuthorService {
         System.out.println("please enter your age:");
         int age = scanner.nextInt();
         System.out.println("Please enter your book name:");
-        String[] bookList = new String[]{scanner.toString()};
+        String[] bookList = new String[]{scanner.next()};
         int result = authorRepository.save(firstName,lastName,age,bookList);
         if(result != 0)
             System.out.println(firstName + " successfully added to database");
