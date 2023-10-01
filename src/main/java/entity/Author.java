@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Arrays;
+
 public class Author {
     private Integer authorId;
     private String firstName;
@@ -57,5 +59,16 @@ public class Author {
 
     public void setBookList(String[] bookList) {
         this.bookList = bookList;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "authorId=" + authorId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", bookList=" + Arrays.toString(bookList) +
+                '}';
     }
 }
