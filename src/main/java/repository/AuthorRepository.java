@@ -28,14 +28,14 @@ public class AuthorRepository {
         return result;
     }
 
-    public Author load(int authodId) throws SQLException {
-        String sql = "SELECT * FROM author WHERE authorId=?";
+    public Author load(int id) throws SQLException {
+        String sql = "SELECT * FROM author WHERE id=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setInt(1, authodId);
+        preparedStatement.setInt(1, id);
         ResultSet resultSet = preparedStatement.executeQuery();
         Author author = new Author();
         if (resultSet.next()) {
-            author.setAuthorId(resultSet.getInt(1));
+            author.setId(resultSet.getInt(1));
             author.setFirstName(resultSet.getString(2));
             author.setLastName(resultSet.getString(3));
             author.setAge(resultSet.getInt(4));
