@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS author(
-    authorId SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     age INT NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS author(
 );
 
 CREATE TABLE IF NOT EXISTS book(
-    bookId SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
     printYear VARCHAR(50) NOT NULL,
     authorBook VARCHAR(50) NOT NULL
