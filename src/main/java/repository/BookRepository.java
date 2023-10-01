@@ -28,14 +28,14 @@ public class BookRepository {
         return result;
     }
 
-    public Book load(int bookId) throws SQLException {
-        String sql = "SELECT * FROM book WHERE bookId=?";
+    public Book load(int id) throws SQLException {
+        String sql = "SELECT * FROM book WHERE id=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setInt(1,bookId);
+        preparedStatement.setInt(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
         Book book = new Book();
         if (resultSet.next()){
-            book.setBookId(resultSet.getInt(1));
+            book.setId(resultSet.getInt(1));
             book.setTitle(resultSet.getString(2));
             book.setPrintYear(resultSet.getString(3));
             book.setAuthorBook(resultSet.getString(4));
@@ -54,10 +54,10 @@ public class BookRepository {
         return book;
     }
 
-    public void delete(Book book) throws SQLException {
-        String query = "DELETE FROM book WHERE bookId = ?";
+    public void delete(int id) throws SQLException {
+        String query = "DELETE FROM book WHERE id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setInt(1,book.getBookId());
+        preparedStatement.setInt(1,id);
         int result = preparedStatement.executeUpdate();
     }
 }
