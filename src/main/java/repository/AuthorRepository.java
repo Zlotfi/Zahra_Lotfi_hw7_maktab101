@@ -17,30 +17,45 @@ public class AuthorRepository {
     public AuthorRepository() throws SQLException {
     }
 
-    public int save(Author author) throws SQLException {
+    public int save(String firstName,String lastName,int age,String[] bookList) throws SQLException {
         String add = "INSERT INTO author(firstName,lastName,age,bookList)VALUES(?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(add);
-        preparedStatement.setString(1, author.getFirstName());
-        preparedStatement.setString(2, author.getLastName());
-        preparedStatement.setInt(3, author.getAge());
-        preparedStatement.setString(4, Arrays.toString((String[]) author.getBookList()));
+        preparedStatement.setString(1,firstName);
+        preparedStatement.setString(2,lastName);
+        preparedStatement.setInt(3,age);
+        preparedStatement.setString(4, Arrays.toString((String[])bookList));
         int result = preparedStatement.executeUpdate();
         return result;
     }
 
-    public Author load(int authorId) throws SQLException {
+    public Author load(int authodId) throws SQLException {
         String sql = "SELECT * FROM author WHERE authorId=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setInt(1,authorId);
+        preparedStatement.setInt(1, authodId);
         ResultSet resultSet = preparedStatement.executeQuery();
         Author author = new Author();
-        if (resultSet.next()){
+        if (resultSet.next()) {
             author.setAuthorId(resultSet.getInt(1));
             author.setFirstName(resultSet.getString(2));
             author.setLastName(resultSet.getString(3));
             author.setAge(resultSet.getInt(4));
             author.setBookList(new String[]{resultSet.getString(5)});
         }
+        Author[] authors = new Author[resultSet.getRow()];
+        int counter = 0;
+        while (resultSet.next()) {
+            authors[counter] = new Author(
+                    resultSet.getInt(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    new String[]{resultSet.getString(5)}
+            );
+            counter++;
+        }
         return author;
+
     }
 }
+
+
