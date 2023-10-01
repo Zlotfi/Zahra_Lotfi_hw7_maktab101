@@ -40,6 +40,17 @@ public class BookRepository {
             book.setPrintYear(resultSet.getString(3));
             book.setAuthorBook(resultSet.getString(4));
         }
+        Book[] books = new Book[resultSet.getRow()];
+        int counter = 0;
+        while (resultSet.next()) {
+            books[counter] = new Book(
+                    resultSet.getInt(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+            );
+            counter++;
+        }
         return book;
     }
 
