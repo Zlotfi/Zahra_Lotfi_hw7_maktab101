@@ -2,13 +2,13 @@ package entity;
 
 public class Book {
 
-    private Integer bookId;
+    private Integer id;
     private String title;
     private String printyear;
     private String authorbook;
 
-    public Book(Integer bookId, String title, String printyear, String authorbook) {
-        this.bookId = bookId;
+    public Book(Integer id, String title, String printyear, String authorbook) {
+        this.id = id;
         this.title = title;
         this.printyear = printyear;
         this.authorbook = authorbook;
@@ -18,12 +18,12 @@ public class Book {
 
     }
 
-    public Integer getBookId() {
-        return bookId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -53,7 +53,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "bookId=" + bookId +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", printYear='" + printyear + '\'' +
                 ", authorBook='" + authorbook + '\'' +
