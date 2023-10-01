@@ -3,14 +3,14 @@ package entity;
 import java.util.Arrays;
 
 public class Author {
-    private Integer authorId;
+    private Integer id;
     private String firstName;
     private String lastName;
     private int age;
     private String[] bookList;
 
-    public Author(Integer authorId, String firstName, String lastName, int age, String[] bookList) {
-        this.authorId = authorId;
+    public Author(Integer id, String firstName, String lastName, int age, String[] bookList) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -21,12 +21,12 @@ public class Author {
 
     }
 
-    public Integer getAuthorId() {
-        return authorId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAuthorId(Integer authorId) {
-        this.authorId = authorId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -64,7 +64,7 @@ public class Author {
     @Override
     public String toString() {
         return "Author{" +
-                "authorId=" + authorId +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
