@@ -28,7 +28,7 @@ public class AuthorRepository {
         return result;
     }
 
-    public Author load(int id) throws SQLException {
+    public Author load(Integer id) throws SQLException {
         String sql = "SELECT * FROM author WHERE id=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1, id);
